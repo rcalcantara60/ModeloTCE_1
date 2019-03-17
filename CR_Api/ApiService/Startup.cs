@@ -17,7 +17,7 @@ using TCE.Web.Api.Extensions;
 using Microsoft.AspNetCore.Http;
 using Application.Mappings;
 using System.Collections.Generic;
-using Utils;
+//using Utils;
 using System.Reflection;
 
 
@@ -42,20 +42,16 @@ namespace ApiService
             services.AddSingleton<IControllerActivator>(new SimpleInjectorControllerActivator(_container));
             services.AddSingleton<IViewComponentActivator>(new SimpleInjectorViewComponentActivator(_container));
 
-            var connDict = new Dictionary<ConnectionsName, string>
+            var connDict = new Dictionary<string, string>
             {
-                { ConnectionsName.ConnectionString,  Configuration["Data:ConnectionString:ConnectionString"]},
-                { ConnectionsName.ConnectionStringBi2,  Configuration["Data:ConnectionStringBi2:ConnectionString"]},
-                { ConnectionsName.ConnectionStringBipre,  Configuration["Data:ConnectionStringBipre:ConnectionString"]},
-                { ConnectionsName.ConnectionStringExaData,  Configuration["Data:ConnectionStringExaData:ConnectionString"]},
-                { ConnectionsName.ConnectionStringSCBI,  Configuration["Data:ConnectionStringSCBI:ConnectionString"]},
+                { "ConnectionString",  Configuration["Data:ConnectionString:ConnectionString"]}
             };
 
             //services.AddSingleton(connDict);            
 
             var connectionString = Configuration["Data:Context:ConnectionString"];
 
-            InjectorContainer.RegistrarServicos(_container, new AsyncScopedLifestyle(), connDict[ConnectionsName.ConnectionString], connDict);
+            InjectorContainer.RegistrarServicos(_container, new AsyncScopedLifestyle(), connDict["ConnectionString"], connDict);
 
             AutoMapperConfiguration.Configure();
 

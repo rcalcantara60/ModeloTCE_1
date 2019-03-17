@@ -57,15 +57,14 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
-    <Reference Include="TCE.CrossCutting.Dto, Version=1.0.4.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\TCE.CrossCutting.Dto.2.0.0\lib\net462\TCE.CrossCutting.Dto.dll</HintPath>
+    <Reference Include="TCE.CrossCutting.Dto">
+      <HintPath>..\..\..\CrossCutting\TCE.CrossCutting\bin\Debug\TCE.CrossCutting.Dto.dll</HintPath>
     </Reference>
-    <Reference Include="TCE.DomainLayerBase, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\TCE.DomainLayerBase.2.0.0\lib\net462\TCE.DomainLayerBase.dll</HintPath>
+    <Reference Include="TCE.DomainLayerBase">
+      <HintPath>..\..\..\Domain\TCE.DomainLayerBase\bin\Debug\TCE.DomainLayerBase.dll</HintPath>
     </Reference>
-    <Reference Include="TCE.Repository, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\TCE.Repository.dll</HintPath>
+    <Reference Include="TCE.Repository">
+      <HintPath>..\..\..\Repository\bin\Debug\TCE.Repository.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -84,7 +83,6 @@
     <Compile Include="Entities\Specifications\Or.cs" />
     <Compile Include="Entities\Specifications\SpecExtensions.cs" />
     <Compile Include="Entities\Specifications\SpecificationBase.cs" />
-    <Compile Include="Interfaces\Repositories\IMicroORMBaseRepository.cs" />
     <Compile Include="Interfaces\Services\Comum\IServiceBaseLocal.cs" />
     <Compile Include="Interfaces\Services\ICountryService.cs" />
     <Compile Include="Interfaces\Specification\ISpecification.cs" />

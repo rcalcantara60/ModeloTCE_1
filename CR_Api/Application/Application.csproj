@@ -64,20 +64,17 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="TCE.Aop, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\TCE.Aop.2.0.0\lib\net462\TCE.Aop.dll</HintPath>
+    <Reference Include="TCE.Aop">
+      <HintPath>..\..\..\Aop\bin\Debug\TCE.Aop.dll</HintPath>
     </Reference>
-    <Reference Include="TCE.AppLayerBase, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\TCE.AppLayerBase.2.0.0\lib\net462\TCE.AppLayerBase.dll</HintPath>
+    <Reference Include="TCE.AppLayerBase">
+      <HintPath>..\..\..\App\TCE.AppLayerBase\bin\Debug\TCE.AppLayerBase.dll</HintPath>
     </Reference>
-    <Reference Include="TCE.CrossCutting.Dto, Version=1.0.4.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\TCE.CrossCutting.Dto.2.0.0\lib\net462\TCE.CrossCutting.Dto.dll</HintPath>
+    <Reference Include="TCE.CrossCutting.Dto">
+      <HintPath>..\..\..\CrossCutting\TCE.CrossCutting\bin\Debug\TCE.CrossCutting.Dto.dll</HintPath>
     </Reference>
-    <Reference Include="TCE.DomainLayerBase, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\TCE.DomainLayerBase.2.0.0\lib\net462\TCE.DomainLayerBase.dll</HintPath>
-    </Reference>
-    <Reference Include="TCE.Repository, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\TCE.Repository.2.0.0\lib\TCE.Repository.dll</HintPath>
+    <Reference Include="TCE.DomainLayerBase">
+      <HintPath>..\..\..\Domain\TCE.DomainLayerBase\bin\Debug\TCE.DomainLayerBase.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

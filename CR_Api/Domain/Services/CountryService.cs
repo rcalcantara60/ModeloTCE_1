@@ -14,10 +14,10 @@ namespace Domain.Services
 {
     public class CountryService : ServiceBaseLocal<COUNTRy>, ICountryService
     {
-        private readonly ICountryMircroORMRepository _countryRepository;
-        public CountryService(IEFRepositoryBase<COUNTRy> repository, ICountryMircroORMRepository countryRepository) : base(repository)
+        //private readonly ICountryMircroORMRepository _countryRepository;
+        public CountryService(IEFRepositoryBase<COUNTRy> repositoryEf, IMicroORMBaseRepository<COUNTRy> repositoryMicroOrm) : base(repositoryEf, repositoryMicroOrm)
         {
-            _countryRepository = countryRepository;
+            //_countryRepository = countryRepository;
         }
 
         public ValidationResultDto Add(string arquivo, ref long? idArquivo, string extensao)
@@ -33,11 +33,11 @@ namespace Domain.Services
 
         public IEnumerable<COUNTRy> GetAll()
         {
-            var a = _countryRepository.GetCountry();
-            var b = _countryRepository.GetCountry<COUNTRy>();
-            var c = _countryRepository.GetCountryOutraConn();
+            //var a = _countryRepository.GetCountry();
+            //var b = _countryRepository.GetCountry<COUNTRy>();
+            //var c = _countryRepository.GetCountryOutraConn();
 
-            return _countryRepository.GetCountry<COUNTRy>();
+            return RepositoryMicroOrm.GetAll("SELECT * FROM COUNTRIES");
         }
     }
 }

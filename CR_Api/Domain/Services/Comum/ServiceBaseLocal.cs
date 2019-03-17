@@ -6,7 +6,7 @@ namespace Domain.Services.Comum
 {
     public abstract class ServiceBaseLocal<T> : ServiceBase<T> where T : class
     {        
-        public ServiceBaseLocal(IEFRepositoryBase<T> repository) : base(repository)
+        public ServiceBaseLocal(IEFRepositoryBase<T> repository, IMicroORMBaseRepository<T> repositoryMicroOrm) : base(repository, repositoryMicroOrm)
         {
         }        
     }

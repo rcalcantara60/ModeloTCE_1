@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using Domain.Interfaces.Repositories;
-using Utils;
+//using Utils;
 using Domain.Entities;
-using Repository.MicroORM.Base;
-using Repository.MicroORM.Interfaces;
+using TCE.Repository.Base;
+using TCE.Repository.Interfaces;
 
 namespace Repository.MicroORM
 {
@@ -14,7 +14,7 @@ namespace Repository.MicroORM
     {
         public CountryMicroORMRepository(IDbConnectionFactory dbConnectionFactory):base(dbConnectionFactory)
         {
-            base.DbConnectionDefault = base.DbConnectionFactory.CreateDbConnection(ConnectionsName.ConnectionString);
+            base.DbConnectionDefault = base.DbConnectionFactory.CreateDbConnection("ConnectionString");
         }
         public IEnumerable<T> GetCountry<T>() where T : class
         {
@@ -35,7 +35,7 @@ namespace Repository.MicroORM
 
         public IEnumerable<COUNTRy> GetCountryOutraConn()
         {
-            IEnumerable<COUNTRy> countries = base.GetAll("select * from countries", ConnectionsName.ConnectionStringBi2);
+            IEnumerable<COUNTRy> countries = base.GetAll("select * from countries", "");
 
             return countries;
         }

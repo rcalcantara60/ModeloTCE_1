@@ -1,5 +1,6 @@
 ﻿using Domain.Entities;
 using System.Collections.Generic;
+using TCE.Repository.Interfaces;
 
 namespace Domain.Interfaces.Repositories
 {

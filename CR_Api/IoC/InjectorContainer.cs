@@ -5,14 +5,14 @@ using Domain.Interfaces.Repositories;
 using Domain.Interfaces.Services;
 using Domain.Services;
 using Repository.MicroORM;
-using Repository.MicroORM.Core;
 using SimpleInjector;
 using System.Collections.Generic;
 using TCE.Aop;
 using TCE.DomainLayerBase.Base;
 using TCE.Repository.Base;
+using TCE.Repository.Core;
 using TCE.Repository.Interfaces;
-using Utils;
+//using Utils;
 
 namespace IoC
 {
@@ -43,11 +43,12 @@ namespace IoC
             return (T)proxy;
         }
 
-        public static Container RegistrarServicos(Container container, ScopedLifestyle scoped, string connString, Dictionary<ConnectionsName, string> d)
+        public static Container RegistrarServicos(Container container, ScopedLifestyle scoped, string connString, Dictionary<string, string> d)
         {   
             container.Register<IDbContext>(() => new Context.Context(connString), Lifestyle.Scoped);
             container.Register<IContextManager, ContextManager>(Lifestyle.Scoped);
             container.Register(typeof(IEFRepositoryBase<>), typeof(EFRepositoryBase<>), Lifestyle.Scoped);
+            container.Register(typeof(IMicroORMBaseRepository<>), typeof(MicroORMBaseRepository<>), Lifestyle.Scoped);
             container.Register(typeof(IServiceBase<>), typeof(ServiceBase<>), Lifestyle.Scoped);
 
            
@@ -56,9 +57,9 @@ namespace IoC
             container.Register<ICountryAppService, CountryAppService>(Lifestyle.Scoped);
             container.Register<ICountryMircroORMRepository, CountryMicroORMRepository>(Lifestyle.Scoped);
 
-            container.Register<Repository.MicroORM.Interfaces.IDbConnectionFactory, DbConnectionFactory>(Lifestyle.Scoped);
+            container.Register<IDbConnectionFactory, DbConnectionFactory>(Lifestyle.Scoped);
 
-            container.RegisterSingleton<IDictionary<ConnectionsName, string>>(d);
+            container.RegisterSingleton<IDictionary<string, string>>(d);
 
             return container;
         }

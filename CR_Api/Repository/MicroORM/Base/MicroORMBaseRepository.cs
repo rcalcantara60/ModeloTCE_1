@@ -3,7 +3,7 @@ using Domain.Interfaces.Repositories;
 using Repository.MicroORM.Interfaces;
 using System.Collections.Generic;
 using System.Data;
-using Utils;
+//using Utils;
 
 namespace Repository.MicroORM.Base
 {
