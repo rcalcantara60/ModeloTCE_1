@@ -82,15 +82,6 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="TCE.CrossCutting.Dto">
-      <HintPath>..\..\..\CrossCutting\TCE.CrossCutting\bin\Debug\TCE.CrossCutting.Dto.dll</HintPath>
-    </Reference>
-    <Reference Include="TCE.DomainLayerBase">
-      <HintPath>..\..\..\Domain\TCE.DomainLayerBase\bin\Debug\TCE.DomainLayerBase.dll</HintPath>
-    </Reference>
-    <Reference Include="TCE.Repository">
-      <HintPath>..\..\..\Repository\bin\Debug\TCE.Repository.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base\BaseContext.cs" />
@@ -116,6 +107,18 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\TCE.Base\CrossCutting\TCE.CrossCutting\TCE.CrossCutting.Dto.csproj">
+      <Project>{0cc4df1b-f991-499e-bfee-1fa399fc47e4}</Project>
+      <Name>TCE.CrossCutting.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\TCE.Base\Domain\TCE.DomainLayerBase\TCE.DomainLayerBase.csproj">
+      <Project>{0b426bf9-cd88-4b1c-a231-bb37d161200a}</Project>
+      <Name>TCE.DomainLayerBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\TCE.Base\Repository\TCE.Repository\TCE.Repository.csproj">
+      <Project>{4ee254c8-42f3-4b3c-937b-da5835a185ad}</Project>
+      <Name>TCE.Repository</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Domain\Domain.csproj">
       <Project>{26b7d569-bc43-4ecf-83c8-8da03b70ca4c}</Project>
       <Name>Domain</Name>

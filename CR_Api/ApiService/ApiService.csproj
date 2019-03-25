@@ -43,8 +43,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Api\src\TCE.Web.Api\TCE.Web.Api.csproj" />
-    <ProjectReference Include="..\..\..\App\TCE.AppLayerBase\TCE.AppLayerBase.csproj" />
+    <ProjectReference Include="..\..\..\TCE.Base\API\src\TCE.Web.Api\TCE.Web.Api.csproj" />
     <ProjectReference Include="..\IoC\IoC.csproj" />
     <ProjectReference Include="..\Utils\Utils.csproj" />
   </ItemGroup>

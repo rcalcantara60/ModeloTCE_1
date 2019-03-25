@@ -27,7 +27,7 @@ namespace ApiService.Controllers
         [HttpGet("")]
         public override IActionResult Get()
         {
-            var retorno = _service.Teste();
+            var retorno = base.Get();
             return Ok(retorno);
         }
     }
