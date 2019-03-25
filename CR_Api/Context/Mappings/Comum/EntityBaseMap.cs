@@ -10,7 +10,7 @@ namespace Context.Mappings.Comum
         {
             //Primary key
             //HasKey(t => t.Id);
-            Ignore(t => t.Id);
+            // Ignore(t => t.Id);
 
             //Ignore
             Ignore(t => t.ValidationResult);

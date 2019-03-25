@@ -30,7 +30,7 @@ namespace Domain.Validators
             });
             RuleSet("DefaultUpdate", () =>
             {
-                RuleFor(enity => enity.Id).NotEmpty().WithMessage(ValidationMessages.NaoNuloEdit);
+                //RuleFor(enity => enity.Id).NotEmpty().WithMessage(ValidationMessages.NaoNuloEdit);
                 SetCommonValidators();
             });
         }
