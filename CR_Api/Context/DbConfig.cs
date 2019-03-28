@@ -6,7 +6,7 @@ namespace Context
 {
     public class DbConfig : DbConfiguration
     {
-        public const string DbSchema = "HR_R";
+        public const string DbSchema = "HR";
         public DbConfig()
         {
             SetProviderServices("Oracle.ManagedDataAccess.Client", EFOracleProviderServices.Instance);

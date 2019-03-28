@@ -24,11 +24,11 @@ namespace ApiService.Controllers
         //{
         //    return base.Post(entityDto);
         //}
-        [HttpGet("")]
-        public override IActionResult Get()
-        {
-            var retorno = base.Get();
-            return Ok(retorno);
-        }
+        //[HttpGet("")]
+        //public override IActionResult Get()
+        //{
+        //    var retorno = base.Get();
+        //    return Ok(retorno);
+        //}
     }
 }

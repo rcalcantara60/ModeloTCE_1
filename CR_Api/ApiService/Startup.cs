@@ -90,7 +90,21 @@ namespace ApiService
                     Title = "MODELO HR.",
                     Version = "v1"
                 });
-            });            
+            });
+
+            services.ConfigureSwaggerGen(o =>
+            {
+                //Determine base path for the application.
+
+                var basePath = System.AppContext.BaseDirectory;
+                var assemblyName = Assembly.GetEntryAssembly().GetName().Name;
+                var fileName = System.IO.Path.GetFileName(assemblyName + ".xml");
+
+                //Set the comments path for the swagger json and ui.
+
+                o.IncludeXmlComments(System.IO.Path.Combine(basePath, fileName));
+                
+            });
 
 
         }
@@ -144,6 +158,7 @@ namespace ApiService
             {
                 c.SwaggerEndpoint("v1/swagger.json", "My API V1");
                 c.IndexStream = () => GetType().GetTypeInfo().Assembly.GetManifestResourceStream("ApiService.index.html");
+                //c.RoutePrefix = string.Empty;
 
             });
 
