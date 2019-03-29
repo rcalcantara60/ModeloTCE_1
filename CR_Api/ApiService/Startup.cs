@@ -167,7 +167,7 @@ namespace ApiService
 
         private string MontaErroAplicacao(IExceptionHandlerFeature error)
         {
-            return $"Error: {error.Error.Message} | Inner Error: {error.Error.InnerException?.Message}";
+            return $"Error: {error.Error.Message} | Inner Error: {error.Error.InnerException?.Message} | StackTrace: {error.Error.StackTrace}";
         }
     }
 }

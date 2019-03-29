@@ -8,6 +8,5 @@ namespace Application.Dto.Comum
 {
     public abstract class EntityBaseDto
     {
-        public long Id { get; set; }
     }
 }

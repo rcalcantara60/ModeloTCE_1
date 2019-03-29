@@ -2,6 +2,7 @@ using Domain.Entities.Comum;
 using System;
 using System.Collections.Generic;
 using TCE.DomainLayerBase.Base;
+using FluentValidation;
 
 namespace Domain.Entities
 {
@@ -19,7 +20,9 @@ namespace Domain.Entities
 
         public override bool IsValidToAdd(IServiceBase<COUNTRy> service)
         {
-            throw new NotImplementedException();
+            _validator.SetService(service);
+            ValidationResult = _validator.Validate(this, ruleSet: "DefaultInsert");
+            return ValidationResult.IsValid;
         }
 
         public override bool IsValidToDelete(IServiceBase<COUNTRy> service)
