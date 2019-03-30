@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using TCE.DomainLayerBase.Base;
 using FluentValidation;
+using Domain.Validators;
 
 namespace Domain.Entities
 {
@@ -10,8 +11,9 @@ namespace Domain.Entities
     {
         public COUNTRy()
         {
-            this.LOCATIONS = new List<LOCATION>();
+            this.LOCATIONS = new List<LOCATION>();            
         }
+
         public string COUNTRY_ID { get; set; }
         public string COUNTRY_NAME { get; set; }
         public Nullable<decimal> REGION_ID { get; set; }
@@ -20,7 +22,7 @@ namespace Domain.Entities
 
         public override bool IsValidToAdd(IServiceBase<COUNTRy> service)
         {
-            _validator.SetService(service);
+            //EntityBaseLocal<COUNTRy>.Validate(this);
             ValidationResult = _validator.Validate(this, ruleSet: "DefaultInsert");
             return ValidationResult.IsValid;
         }
@@ -32,7 +34,13 @@ namespace Domain.Entities
 
         public override bool IsValidToUpdade(IServiceBase<COUNTRy> service)
         {
-            throw new NotImplementedException();
+            ValidationResult = _validator.Validate(this, ruleSet: "DefaultUpdate");
+            return ValidationResult.IsValid;
+        }
+
+        public override void SetValidator(IValidator<COUNTRy> v)
+        {
+            _validator = (CountryValidator)v;
         }
     }
 }

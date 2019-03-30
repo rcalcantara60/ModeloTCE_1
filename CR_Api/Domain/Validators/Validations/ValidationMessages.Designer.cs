@@ -142,6 +142,15 @@ namespace Domain.Validators.Validations {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to A regiao deve existir para inserir um pais..
+        /// </summary>
+        internal static string RegionIDDeveExistir {
+            get {
+                return ResourceManager.GetString("RegionIDDeveExistir", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to O Campo  {PropertyName} deve ter no máximo {MaxLength} caracteres..
         /// </summary>
         internal static string TamanhoMaximo {

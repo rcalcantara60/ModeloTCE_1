@@ -1,4 +1,5 @@
 ﻿using Domain.Entities.Comum;
+using FluentValidation;
 using System;
 using System.Collections.Generic;
 using TCE.DomainLayerBase.Base;
@@ -31,6 +32,11 @@ namespace Domain.Entities
         }
 
         public override bool IsValidToUpdade(IServiceBase<JOB> service)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void SetValidator(IValidator<JOB> v)
         {
             throw new NotImplementedException();
         }

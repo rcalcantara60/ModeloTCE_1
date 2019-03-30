@@ -8,17 +8,17 @@ using TCE.Repository.Interfaces;
 
 namespace Domain.Validators
 {
-    public class CountryValidator : BaseValidatorLocal<COUNTRy>
+    public class RegionValidator : BaseValidatorLocal<REGION>
     {        
-        public CountryValidator(IEFRepositoryBase<COUNTRy> repositoryBase) : base(repositoryBase)
+        public RegionValidator(IEFRepositoryBase<REGION> repositoryBase) : base(repositoryBase)
         {     
             SetValidators();
         }
 
         public override void SetCommonValidators()
-        {            
-            RuleFor(enity => enity.COUNTRY_ID).NotEmpty().WithMessage(ValidationMessages.NaoNuloInsert);
-            RuleFor(enity => enity.REGION_ID).Must(id => RegiaoExiste(id.Value)).WithMessage(ValidationMessages.RegionIDDeveExistir);
+        {
+            //RuleFor(enity => enity.COUNTRY_ID).NotEmpty().WithMessage(ValidationMessages.NaoNuloInsert);
+            //RuleFor(enity => enity.REGION_ID).Must(id => RegiaoExiste(id.Value)).WithMessage(ValidationMessages.RegionIDDeveExistir);
             ////RuleFor(enity => enity.IdSituacao).Must(IdSituacao => IndicadorExiste(IdSituacao)).WithMessage("Situação inválida.");
             ////RuleFor(enity => enity.IdStatus).Must(IdStatus => IndicadorExiste(IdStatus)).WithMessage("Status inválido.");
             //RuleFor(enity => enity.Extensao).MaximumLength(5).WithMessage(ValidationMessages.TamanhoMaximo);
@@ -38,9 +38,9 @@ namespace Domain.Validators
             });
         }
 
-        public bool RegiaoExiste(decimal regionId)
+        /*public bool RegiaoExiste(decimal regionId)
         {
-            return base._repositoryBase.Count(c => c.REGION.REGION_ID == regionId) > 0;
-        }
+            return _regionService.VerificaSeRegiaoExiste(regionId);
+        }*/
     }
 }

@@ -1,14 +1,18 @@
 ﻿using Application;
 using Application.Interfaces;
 using Context;
+using Domain.Entities;
 using Domain.Interfaces.Repositories;
 using Domain.Interfaces.Services;
 using Domain.Services;
+using Domain.Validators;
+using FluentValidation;
 using Repository.MicroORM;
 using SimpleInjector;
 using System.Collections.Generic;
 using TCE.Aop;
 using TCE.DomainLayerBase.Base;
+using TCE.DomainLayerBase.Validator;
 using TCE.Repository.Base;
 using TCE.Repository.Core;
 using TCE.Repository.Interfaces;
@@ -49,10 +53,15 @@ namespace IoC
             container.Register<IContextManager, ContextManager>(Lifestyle.Scoped);
             container.Register(typeof(IEFRepositoryBase<>), typeof(EFRepositoryBase<>), Lifestyle.Scoped);
             container.Register(typeof(IMicroORMBaseRepository<>), typeof(MicroORMBaseRepository<>), Lifestyle.Scoped);
+
+            container.Register<IValidator<COUNTRy>, CountryValidator>(Lifestyle.Scoped);
+            container.Register<IValidator<REGION>, RegionValidator>(Lifestyle.Scoped);
+
             container.Register(typeof(IServiceBase<>), typeof(ServiceBase<>), Lifestyle.Scoped);
 
-           
+            container.Register<IRegionService, RegionService>(Lifestyle.Scoped);
 
+            
             container.Register<ICountryService, CountryService>(Lifestyle.Scoped);
             container.Register<ICountryAppService, CountryAppService>(Lifestyle.Scoped);
             container.Register<ICountryMircroORMRepository, CountryMicroORMRepository>(Lifestyle.Scoped);

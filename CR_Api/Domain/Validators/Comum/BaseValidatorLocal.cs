@@ -1,11 +1,16 @@
 ﻿using Domain.Interfaces.Services.Comum;
 using System;
 using TCE.DomainLayerBase.Validator;
+using TCE.Repository.Interfaces;
 
 namespace Domain.Validators.Comum
 {
     public abstract class BaseValidatorLocal<T> : BaseValidator<T> where T : class
     {
+        public BaseValidatorLocal(IEFRepositoryBase<T> repository):base(repository)
+        {
+
+        }
         protected bool LessThanOrEqualToMaxDecimal(decimal? valor)
         {
             if (valor != null)

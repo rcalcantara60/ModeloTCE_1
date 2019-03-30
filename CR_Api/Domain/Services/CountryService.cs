@@ -1,23 +1,18 @@
 ﻿using Domain.Entities;
 using Domain.Interfaces.Services;
 using Domain.Services.Comum;
-using System;
 using TCE.CrossCutting.Dto;
-using TCE.DomainLayerBase.Base;
 using TCE.Repository.Interfaces;
-
 using System.Collections.Generic;
-using System.Data.Entity;
-using Domain.Interfaces.Repositories;
+using FluentValidation;
 
 namespace Domain.Services
 {
     public class CountryService : ServiceBaseLocal<COUNTRy>, ICountryService
-    {
-        //private readonly ICountryMircroORMRepository _countryRepository;
-        public CountryService(IEFRepositoryBase<COUNTRy> repositoryEf, IMicroORMBaseRepository<COUNTRy> repositoryMicroOrm) : base(repositoryEf, repositoryMicroOrm)
-        {
-            //_countryRepository = countryRepository;
+    {           
+        public CountryService(IEFRepositoryBase<COUNTRy> repositoryEf, IMicroORMBaseRepository<COUNTRy> repositoryMicroOrm, IValidator<COUNTRy> v) : base(repositoryEf, repositoryMicroOrm, v)
+        {   
+            
         }
 
         public ValidationResultDto Add(string arquivo, ref long? idArquivo, string extensao)
@@ -29,7 +24,7 @@ namespace Domain.Services
             //    result = Add(documento);
             //}
             return result;
-        }
+        }        
 
         public IEnumerable<COUNTRy> GetAll()
         {

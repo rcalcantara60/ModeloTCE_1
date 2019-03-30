@@ -144,6 +144,9 @@
   <data name="PessoaNaoExiste" xml:space="preserve">
     <value>Pessoa não existe.</value>
   </data>
+  <data name="RegionIDDeveExistir" xml:space="preserve">
+    <value>A regiao deve existir para inserir um pais.</value>
+  </data>
   <data name="TamanhoMaximo" xml:space="preserve">
     <value>O Campo  {PropertyName} deve ter no máximo {MaxLength} caracteres.</value>
   </data>
