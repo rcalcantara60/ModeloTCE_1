@@ -1,6 +1,7 @@
 ﻿using Context.Base;
 using Context.Mappings;
 using Domain.Entities;
+using Resources;
 using System;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
@@ -10,6 +11,7 @@ namespace Context
 {
     public partial class Context : BaseContext
     {
+        public static string DbSchema { get; set; }
         static Context()
         {
             //Caso execute Feed da base
@@ -23,9 +25,10 @@ namespace Context
             Configuration.LazyLoadingEnabled = true;
         }
 
-        public Context(string conn)
+        public Context(string conn, string dbSchema)
             : base(conn, DateTime.Now)
         {
+            DbSchema = dbSchema;
             Configuration.ProxyCreationEnabled = false;
             Configuration.LazyLoadingEnabled = true;
         }

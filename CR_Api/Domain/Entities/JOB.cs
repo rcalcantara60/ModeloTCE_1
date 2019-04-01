@@ -21,17 +21,17 @@ namespace Domain.Entities
         public virtual ICollection<EMPLOYEE> EMPLOYEES { get; set; }
         public virtual ICollection<JOB_HISTORY> JOB_HISTORY { get; set; }
 
-        public override bool IsValidToAdd(IServiceBase<JOB> service)
+        public override bool IsValidToAdd()
         {
             throw new NotImplementedException();
         }
 
-        public override bool IsValidToDelete(IServiceBase<JOB> service)
+        public override bool IsValidToDelete()
         {
             throw new NotImplementedException();
         }
 
-        public override bool IsValidToUpdade(IServiceBase<JOB> service)
+        public override bool IsValidToUpdade()
         {
             throw new NotImplementedException();
         }

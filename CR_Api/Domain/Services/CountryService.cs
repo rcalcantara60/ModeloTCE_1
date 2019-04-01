@@ -28,6 +28,7 @@ namespace Domain.Services
 
         public IEnumerable<COUNTRy> GetAll()
         {
+          
             //var a = _countryRepository.GetCountry();
             //var b = _countryRepository.GetCountry<COUNTRy>();
             //var c = _countryRepository.GetCountryOutraConn();

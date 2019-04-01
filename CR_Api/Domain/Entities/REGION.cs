@@ -17,17 +17,17 @@ namespace Domain.Entities
         public string REGION_NAME { get; set; }
         public virtual ICollection<COUNTRy> COUNTRIES { get; set; }
 
-        public override bool IsValidToAdd(IServiceBase<REGION> service)
+        public override bool IsValidToAdd()
         {
             throw new NotImplementedException();
         }
 
-        public override bool IsValidToDelete(IServiceBase<REGION> service)
+        public override bool IsValidToDelete()
         {
             throw new NotImplementedException();
         }
 
-        public override bool IsValidToUpdade(IServiceBase<REGION> service)
+        public override bool IsValidToUpdade()
         {
             throw new NotImplementedException();
         }

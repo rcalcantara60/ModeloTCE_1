@@ -25,17 +25,17 @@ namespace Domain.Entities
         public string COUNTRY_NAME { get; set; }
         public string REGION_NAME { get; set; }
 
-        public override bool IsValidToAdd(IServiceBase<EMP_DETAILS_VIEW> service)
+        public override bool IsValidToAdd()
         {
             throw new NotImplementedException();
         }
 
-        public override bool IsValidToDelete(IServiceBase<EMP_DETAILS_VIEW> service)
+        public override bool IsValidToDelete()
         {
             throw new NotImplementedException();
         }
 
-        public override bool IsValidToUpdade(IServiceBase<EMP_DETAILS_VIEW> service)
+        public override bool IsValidToUpdade()
         {
             throw new NotImplementedException();
         }

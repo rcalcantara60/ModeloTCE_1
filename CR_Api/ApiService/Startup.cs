@@ -19,7 +19,7 @@ using Application.Mappings;
 using System.Collections.Generic;
 //using Utils;
 using System.Reflection;
-
+using Resources;
 
 namespace ApiService
 {
@@ -51,7 +51,9 @@ namespace ApiService
 
             var connectionString = Configuration["Data:Context:ConnectionString"];
 
-            InjectorContainer.RegistrarServicos(_container, new AsyncScopedLifestyle(), connDict["ConnectionString"], connDict);
+            var settings = Configuration.GetSection(@"ServiceSettings").Get<ServiceSettings>();
+
+            InjectorContainer.RegistrarServicos(_container, new AsyncScopedLifestyle(), connDict["ConnectionString"], connDict, settings);
 
             AutoMapperConfiguration.Configure();
 

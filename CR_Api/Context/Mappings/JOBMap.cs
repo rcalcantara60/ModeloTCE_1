@@ -23,7 +23,7 @@ namespace Context.Mappings
                 .HasMaxLength(35);
 
             // Table & Column Mappings
-            this.ToTable("JOBS", DbConfig.DbSchema);
+            this.ToTable("JOBS", Context.DbSchema);
             this.Property(t => t.JOB_ID).HasColumnName("JOB_ID");
             this.Property(t => t.JOB_TITLE).HasColumnName("JOB_TITLE");
             this.Property(t => t.MIN_SALARY).HasColumnName("MIN_SALARY");

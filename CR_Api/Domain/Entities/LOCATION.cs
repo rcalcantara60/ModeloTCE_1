@@ -22,17 +22,17 @@ namespace Domain.Entities
         public virtual COUNTRy COUNTRy { get; set; }
         public virtual ICollection<DEPARTMENT> DEPARTMENTS { get; set; }
 
-        public override bool IsValidToAdd(IServiceBase<LOCATION> service)
+        public override bool IsValidToAdd()
         {
             throw new NotImplementedException();
         }
 
-        public override bool IsValidToDelete(IServiceBase<LOCATION> service)
+        public override bool IsValidToDelete()
         {
             throw new NotImplementedException();
         }
 
-        public override bool IsValidToUpdade(IServiceBase<LOCATION> service)
+        public override bool IsValidToUpdade()
         {
             throw new NotImplementedException();
         }

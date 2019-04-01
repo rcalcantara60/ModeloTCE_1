@@ -8,11 +8,11 @@ using Domain.Services;
 using Domain.Validators;
 using FluentValidation;
 using Repository.MicroORM;
+using Resources;
 using SimpleInjector;
 using System.Collections.Generic;
 using TCE.Aop;
 using TCE.DomainLayerBase.Base;
-using TCE.DomainLayerBase.Validator;
 using TCE.Repository.Base;
 using TCE.Repository.Core;
 using TCE.Repository.Interfaces;
@@ -47,12 +47,15 @@ namespace IoC
             return (T)proxy;
         }
 
-        public static Container RegistrarServicos(Container container, ScopedLifestyle scoped, string connString, Dictionary<string, string> d)
-        {   
-            container.Register<IDbContext>(() => new Context.Context(connString), Lifestyle.Scoped);
+        public static Container RegistrarServicos(Container container, ScopedLifestyle scoped, string connString, Dictionary<string, string> d, ServiceSettings serviceSettings)
+        {
+            container.RegisterInstance(serviceSettings);
+            container.Register<IDbContext>(() => new Context.Context(connString, serviceSettings.DbSchema), Lifestyle.Scoped);
             container.Register<IContextManager, ContextManager>(Lifestyle.Scoped);
             container.Register(typeof(IEFRepositoryBase<>), typeof(EFRepositoryBase<>), Lifestyle.Scoped);
             container.Register(typeof(IMicroORMBaseRepository<>), typeof(MicroORMBaseRepository<>), Lifestyle.Scoped);
+
+            
 
             container.Register<IValidator<COUNTRy>, CountryValidator>(Lifestyle.Scoped);
             container.Register<IValidator<REGION>, RegionValidator>(Lifestyle.Scoped);
@@ -68,7 +71,7 @@ namespace IoC
 
             container.Register<IDbConnectionFactory, DbConnectionFactory>(Lifestyle.Scoped);
 
-            container.RegisterSingleton<IDictionary<string, string>>(d);
+            container.RegisterInstance<IDictionary<string, string>>(d);
 
             return container;
         }

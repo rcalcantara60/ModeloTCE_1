@@ -5,10 +5,9 @@ using System.Data.Entity;
 namespace Context
 {
     public class DbConfig : DbConfiguration
-    {
-        public const string DbSchema = "HR";
+    {   
         public DbConfig()
-        {
+        {            
             SetProviderServices("Oracle.ManagedDataAccess.Client", EFOracleProviderServices.Instance);
             SetProviderFactory("Oracle.ManagedDataAccess.Client", OracleClientFactory.Instance);
         }

@@ -20,19 +20,19 @@ namespace Domain.Entities
         public virtual REGION REGION { get; set; }
         public virtual ICollection<LOCATION> LOCATIONS { get; set; }
 
-        public override bool IsValidToAdd(IServiceBase<COUNTRy> service)
+        public override bool IsValidToAdd()
         {
             //EntityBaseLocal<COUNTRy>.Validate(this);
             ValidationResult = _validator.Validate(this, ruleSet: "DefaultInsert");
             return ValidationResult.IsValid;
         }
 
-        public override bool IsValidToDelete(IServiceBase<COUNTRy> service)
+        public override bool IsValidToDelete()
         {
             throw new NotImplementedException();
         }
 
-        public override bool IsValidToUpdade(IServiceBase<COUNTRy> service)
+        public override bool IsValidToUpdade()
         {
             ValidationResult = _validator.Validate(this, ruleSet: "DefaultUpdate");
             return ValidationResult.IsValid;

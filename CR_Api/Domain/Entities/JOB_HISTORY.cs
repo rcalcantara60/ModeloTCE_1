@@ -17,17 +17,17 @@ namespace Domain.Entities
         public virtual EMPLOYEE EMPLOYEE { get; set; }
         public virtual JOB JOB { get; set; }
 
-        public override bool IsValidToAdd(IServiceBase<JOB_HISTORY> service)
+        public override bool IsValidToAdd()
         {
             throw new NotImplementedException();
         }
 
-        public override bool IsValidToDelete(IServiceBase<JOB_HISTORY> service)
+        public override bool IsValidToDelete()
         {
             throw new NotImplementedException();
         }
 
-        public override bool IsValidToUpdade(IServiceBase<JOB_HISTORY> service)
+        public override bool IsValidToUpdade()
         {
             throw new NotImplementedException();
         }

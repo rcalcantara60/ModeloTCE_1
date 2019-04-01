@@ -21,7 +21,7 @@ namespace Context.Mappings
                 .HasMaxLength(10);
 
             // Table & Column Mappings
-            this.ToTable("JOB_HISTORY", DbConfig.DbSchema);
+            this.ToTable("JOB_HISTORY", Context.DbSchema);
             this.Property(t => t.EMPLOYEE_ID).HasColumnName("EMPLOYEE_ID");
             this.Property(t => t.START_DATE).HasColumnName("START_DATE");
             this.Property(t => t.END_DATE).HasColumnName("END_DATE");

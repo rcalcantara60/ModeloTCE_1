@@ -20,7 +20,7 @@ namespace Context.Mappings
                 .HasMaxLength(25);
 
             // Table & Column Mappings
-            this.ToTable("REGIONS", DbConfig.DbSchema);
+            this.ToTable("REGIONS", Context.DbSchema);
             this.Property(t => t.REGION_ID).HasColumnName("REGION_ID");
             this.Property(t => t.REGION_NAME).HasColumnName("REGION_NAME");
         }

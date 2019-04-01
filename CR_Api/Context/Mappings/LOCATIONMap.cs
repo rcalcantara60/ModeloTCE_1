@@ -34,7 +34,7 @@ namespace Context.Mappings
                 .HasMaxLength(2);
 
             // Table & Column Mappings
-            this.ToTable("LOCATIONS", DbConfig.DbSchema);
+            this.ToTable("LOCATIONS", Context.DbSchema);
             this.Property(t => t.LOCATION_ID).HasColumnName("LOCATION_ID");
             this.Property(t => t.STREET_ADDRESS).HasColumnName("STREET_ADDRESS");
             this.Property(t => t.POSTAL_CODE).HasColumnName("POSTAL_CODE");
