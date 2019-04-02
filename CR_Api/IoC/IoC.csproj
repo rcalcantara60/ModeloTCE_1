@@ -74,6 +74,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\WorkSpaceGit\TCE.RestClient\TCE.RestClient\TCE.RestClient.csproj">
+      <Project>{c14bf8eb-2255-42bf-97f0-034551f3d348}</Project>
+      <Name>TCE.RestClient</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\TCE.Base\AOP\TCE.Aop\TCE.Aop.csproj">
       <Project>{15bb49ea-3aa3-44a9-8d10-3015526f2b0c}</Project>
       <Name>TCE.Aop</Name>
@@ -85,6 +89,10 @@
     <ProjectReference Include="..\..\..\TCE.Base\Domain\TCE.DomainLayerBase\TCE.DomainLayerBase.csproj">
       <Project>{0b426bf9-cd88-4b1c-a231-bb37d161200a}</Project>
       <Name>TCE.DomainLayerBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AcL\AcL.csproj">
+      <Project>{1CA5A7D2-A9D2-4DD0-B2F0-31FB4BCCAB98}</Project>
+      <Name>AcL</Name>
     </ProjectReference>
     <ProjectReference Include="..\Application\Application.csproj">
       <Project>{20a0aee2-36a1-4673-ae67-e2b850cdea2d}</Project>

@@ -74,6 +74,9 @@
     <Compile Include="Entities\Specifications\Or.cs" />
     <Compile Include="Entities\Specifications\SpecExtensions.cs" />
     <Compile Include="Entities\Specifications\SpecificationBase.cs" />
+    <Compile Include="Interfaces\Repositories\ISigespDadosDeptoRepository.cs" />
+    <Compile Include="Interfaces\Repositories\ISigespDadosPessoaRepository.cs" />
+    <Compile Include="Interfaces\Repositories\ISigespAuthRepository.cs" />
     <Compile Include="Interfaces\Services\Comum\IServiceBaseLocal.cs" />
     <Compile Include="Interfaces\Services\IRegionService.cs" />
     <Compile Include="Interfaces\Services\ICountryService.cs" />
@@ -104,6 +107,10 @@
       <Project>{4ee254c8-42f3-4b3c-937b-da5835a185ad}</Project>
       <Name>TCE.Repository</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Dto\Dto.csproj">
+      <Project>{78198F5E-3048-4BBA-9C96-F98613221550}</Project>
+      <Name>Dto</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Utils\Utils.csproj">
       <Project>{c9de5cec-b981-4be6-98aa-1b1d90eff162}</Project>
       <Name>Utils</Name>
@@ -119,5 +126,6 @@
       <LastGenOutput>ValidationMessages.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -10,7 +10,6 @@ namespace Dto.Mappings
         {
             CreateMap<ValidationFailure, ValidationFailureDto>();
             CreateMap<ValidationResult, ValidationResultDto>().ForMember(e => e.Errors, opt => opt.MapFrom(src => src.Errors));
-
         }
     }
 }

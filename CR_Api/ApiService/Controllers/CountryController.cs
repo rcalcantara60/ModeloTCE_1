@@ -20,15 +20,11 @@ namespace ApiService.Controllers
             
         }
 
-        //public override IActionResult Post([FromBody] CountryDto entityDto)
-        //{
-        //    return base.Post(entityDto);
-        //}
-        //[HttpGet("")]
-        //public override IActionResult Get()
-        //{
-        //    var retorno = base.Get();
-        //    return Ok(retorno);
-        //}
+        [HttpGet("")]
+        public override IActionResult Get()
+        {
+            var retorno = _service.Teste();
+            return Ok(retorno);
+        }
     }
 }

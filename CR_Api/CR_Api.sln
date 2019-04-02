@@ -58,6 +58,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcL", "AcL\AcL.csproj", "{1
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Resources", "Resources\Resources.csproj", "{875F9F82-3F9D-47D5-A561-544E97A3F22B}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TCE.RestClient", "..\..\..\WorkSpaceGit\TCE.RestClient\TCE.RestClient\TCE.RestClient.csproj", "{C14BF8EB-2255-42BF-97F0-034551F3D348}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -128,6 +130,10 @@ Global
 		{875F9F82-3F9D-47D5-A561-544E97A3F22B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{875F9F82-3F9D-47D5-A561-544E97A3F22B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{875F9F82-3F9D-47D5-A561-544E97A3F22B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C14BF8EB-2255-42BF-97F0-034551F3D348}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C14BF8EB-2255-42BF-97F0-034551F3D348}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C14BF8EB-2255-42BF-97F0-034551F3D348}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C14BF8EB-2255-42BF-97F0-034551F3D348}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -152,6 +158,7 @@ Global
 		{FCD26C26-49AA-48C2-9D46-D462ED6090D8} = {72D60324-146C-475E-A8FE-CE47221AA450}
 		{1CA5A7D2-A9D2-4DD0-B2F0-31FB4BCCAB98} = {CEA87614-3FBD-4C43-8BC8-9348A2EDE9EB}
 		{875F9F82-3F9D-47D5-A561-544E97A3F22B} = {49CEF95E-F56B-47D3-B749-DDEA65F98451}
+		{C14BF8EB-2255-42BF-97F0-034551F3D348} = {72D60324-146C-475E-A8FE-CE47221AA450}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C18B7884-4AC3-4874-A5BC-94FEC9A40243}

@@ -9,7 +9,7 @@ namespace Application.Mappings
         {
             Mapper.Initialize(cfg => cfg.AddProfiles(new[]
             {
-                "Application", "Dto"
+                "Application", "Dto", "AcL"
             }));
         }
     }

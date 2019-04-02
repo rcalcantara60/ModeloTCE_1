@@ -71,6 +71,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="API\Sigesp\LotacaoDto.cs" />
+    <Compile Include="API\Sigesp\PessoaDto.cs" />
     <Compile Include="Mappings\ToDtoMappingProfile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -91,5 +93,6 @@
       <Name>TCE.CrossCutting.Dto</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

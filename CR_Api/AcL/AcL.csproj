@@ -30,11 +30,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=8.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.8.0.0\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.ValueTuple">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -44,15 +51,44 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Core\Exceptions\BadRequestException.cs" />
-    <Compile Include="Core\Extensions\QueryStringExtension.cs" />
-    <Compile Include="Core\Interfaces\IRequestService.cs" />
-    <Compile Include="Core\Services\RequestService.cs" />
+    <Compile Include="Mappings\ApiToDtoMapping\SigespApiToDtoProfile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sigesp\Dto\LotacoesAtivasResponse.cs" />
+    <Compile Include="Sigesp\Dto\PessoasAtivasResponse.cs" />
+    <Compile Include="Sigesp\Interfaces\ISigespAuthRequestService.cs" />
+    <Compile Include="Sigesp\Interfaces\ISigespDadosDeptoRequestService.cs" />
+    <Compile Include="Sigesp\Interfaces\ISigespDadosPessoaRequestService.cs" />
+    <Compile Include="Sigesp\Repository\SigespDadosPessoaRepository.cs" />
+    <Compile Include="Sigesp\Repository\SigespDadosDeptoRepository.cs" />
+    <Compile Include="Sigesp\Repository\SigespAuthRepository.cs" />
+    <Compile Include="Sigesp\Services\BaseApiService.cs" />
+    <Compile Include="Sigesp\Services\SigespDadosPessoaRequestService.cs" />
+    <Compile Include="Sigesp\Services\SigespDadosDeptoRequestService.cs" />
+    <Compile Include="Sigesp\Services\SigespAuthRequestService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Mappings\DtoToApiMapping\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\WorkSpaceGit\TCE.RestClient\TCE.RestClient\TCE.RestClient.csproj">
+      <Project>{c14bf8eb-2255-42bf-97f0-034551f3d348}</Project>
+      <Name>TCE.RestClient</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain\Domain.csproj">
+      <Project>{26B7D569-BC43-4ECF-83C8-8DA03B70CA4C}</Project>
+      <Name>Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dto\Dto.csproj">
+      <Project>{78198F5E-3048-4BBA-9C96-F98613221550}</Project>
+      <Name>Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Resources\Resources.csproj">
+      <Project>{875F9F82-3F9D-47D5-A561-544E97A3F22B}</Project>
+      <Name>Resources</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

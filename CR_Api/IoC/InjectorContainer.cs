@@ -1,4 +1,7 @@
-﻿using Application;
+﻿using AcL.Sigesp.Interfaces;
+using AcL.Sigesp.Repository;
+using AcL.Sigesp.Services;
+using Application;
 using Application.Interfaces;
 using Context;
 using Domain.Entities;
@@ -64,7 +67,13 @@ namespace IoC
 
             container.Register<IRegionService, RegionService>(Lifestyle.Scoped);
 
-            
+            container.Register<ISigespDadosPessoaRequestService, SigespDadosPessoaRequestService>(Lifestyle.Scoped);
+            container.Register<ISigespDadosPessoaRepository, SigespDadosPessoaRepository>(Lifestyle.Scoped);
+
+            container.Register<ISigespDadosDeptoRequestService, SigespDadosDeptoRequestService>(Lifestyle.Scoped);
+            container.Register<ISigespDadosDeptoRepository, SigespDadosDeptoRepository>(Lifestyle.Scoped);
+
+
             container.Register<ICountryService, CountryService>(Lifestyle.Scoped);
             container.Register<ICountryAppService, CountryAppService>(Lifestyle.Scoped);
             container.Register<ICountryMircroORMRepository, CountryMicroORMRepository>(Lifestyle.Scoped);
