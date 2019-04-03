@@ -11,5 +11,7 @@ namespace Domain.Interfaces.Repositories
     {
         IEnumerable<PessoaDto> ConsultarPessoasAtivasPorNome(string nome);
         Task<IEnumerable<PessoaDto>> ConsultaPessoasAtivasPorNomeAsync(string nome, CancellationToken cancellationToken);
+        GestorLotacaoDto ConsultarGestorDaLotacaoPeloIdLotacao(string idLotacao);
+        Task<GestorLotacaoDto> ConsultarGestorDaLotacaoPeloIdLotacaoAsync(string idLotacao, CancellationToken cancellationToken);
     }
 }

@@ -19,7 +19,7 @@ namespace AcL.Sigesp.Repository
 
         public IEnumerable<LotacaoDto> obterListagemLotacoesAtivas()
         {
-            var r = _sigespDadosDeptoRequestService.Get<object, IEnumerable<LotacoesAtivasResponse>>(new object(), @"/departamento/obterListagemLotacoesAtivas");            
+            var r = _sigespDadosDeptoRequestService.Get<dynamic, IEnumerable<LotacoesAtivasResponse>>(new { }, @"/departamento/obterListagemLotacoesAtivas");            
             return Mapper.Map<IEnumerable<LotacoesAtivasResponse>,IEnumerable<LotacaoDto>>(r);
         }
 

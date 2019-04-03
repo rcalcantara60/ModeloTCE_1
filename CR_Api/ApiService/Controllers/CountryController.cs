@@ -20,8 +20,8 @@ namespace ApiService.Controllers
             
         }
 
-        [HttpGet("")]
-        public override IActionResult Get()
+        [HttpGet("TesteACL")]
+        public IActionResult TesteACL()
         {
             var retorno = _service.Teste();
             return Ok(retorno);

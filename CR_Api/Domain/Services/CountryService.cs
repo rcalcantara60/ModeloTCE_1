@@ -35,12 +35,16 @@ namespace Domain.Services
 
         public IEnumerable<COUNTRy> GetAll()
         {
-            var r = _sigespDadosPessoaRepository.ConsultarPessoasAtivasPorNome("Rodrigo");
-            var rr =  _sigespDadosPessoaRepository.ConsultaPessoasAtivasPorNomeAsync("Rodrigo", CancellationToken.None);
-            //var rrr = _sigespDadosDeptoRepository.obterListagemLotacoesAtivas();
-            //var rrrr = _sigespDadosDeptoRepository.obterListagemLotacoesAtivasAsync(CancellationToken.None);
-            Task.WaitAll(rr);
-            //Task.WaitAll(rrrr);
+            //POST - http://augita.tce.mg.gov.br:8280/sigespDados/pessoa/consultarPessoasAtivasPorNome/Rodrigo
+            var pessoas1 = _sigespDadosPessoaRepository.ConsultarPessoasAtivasPorNome("Rodrigo");
+            var pessoas2 =  _sigespDadosPessoaRepository.ConsultaPessoasAtivasPorNomeAsync("Rodrigo", CancellationToken.None).Result;
+            //GET - http://augita.tce.mg.gov.br:8280/sigespDados/departamento/obterListagemLotacoesAtivas
+            var lotacoes1 = _sigespDadosDeptoRepository.obterListagemLotacoesAtivas();
+            var lotacoes2 = _sigespDadosDeptoRepository.obterListagemLotacoesAtivasAsync(CancellationToken.None).Result;
+            //POST - http://apim.tce.mg.gov.br:8280/sigespDados/pessoa/consultarGestorDaLotacaoPeloIdLotacao
+            var gestor1 = _sigespDadosPessoaRepository.ConsultarGestorDaLotacaoPeloIdLotacao("551839");
+            var gestor2 = _sigespDadosPessoaRepository.ConsultarGestorDaLotacaoPeloIdLotacaoAsync("551839", CancellationToken.None).Result;
+            
             return null;
         }
     }

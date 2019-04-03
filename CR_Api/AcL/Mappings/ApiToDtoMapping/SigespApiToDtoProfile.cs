@@ -10,6 +10,7 @@ namespace AcL.Mappings.ApiToDtoMapping
         {
             CreateMap<LotacoesAtivasResponse, LotacaoDto>();
             CreateMap<PessoasAtivasResponse, PessoaDto>();
+            CreateMap<GestorLotacaoResponse, GestorLotacaoDto>();
         }
     }
 }

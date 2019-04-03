@@ -19,14 +19,27 @@ namespace AcL.Sigesp.Repository
 
         public async Task<IEnumerable<PessoaDto>> ConsultaPessoasAtivasPorNomeAsync(string nome, CancellationToken cancellationToken)
         {
-            var r = await _sigespDadosPessoaRequestService.PostAsync<object, IEnumerable<PessoasAtivasResponse>>(new object(), @"/pessoa/consultarPessoasAtivasPorNome/"+nome, cancellationToken);
+            var r = await _sigespDadosPessoaRequestService.PostAsync<dynamic, IEnumerable<PessoasAtivasResponse>>(new { }, @"/pessoa/consultarPessoasAtivasPorNome/"+nome, cancellationToken);
             return Mapper.Map<IEnumerable<PessoasAtivasResponse>, IEnumerable<PessoaDto>>(r);
         }
 
         public IEnumerable<PessoaDto> ConsultarPessoasAtivasPorNome(string nome)
         {
-            var r = _sigespDadosPessoaRequestService.Post<object, IEnumerable<PessoasAtivasResponse>>(new object(), @"/pessoa/consultarPessoasAtivasPorNome/" + nome);
+            var r = _sigespDadosPessoaRequestService.Post<dynamic, IEnumerable<PessoasAtivasResponse>>(new { }, @"/pessoa/consultarPessoasAtivasPorNome/" + nome);
             return Mapper.Map<IEnumerable<PessoasAtivasResponse>, IEnumerable<PessoaDto>>(r);
+        }
+
+        public GestorLotacaoDto ConsultarGestorDaLotacaoPeloIdLotacao(string idLotacao)
+        {
+            var r = _sigespDadosPessoaRequestService.Post<dynamic, GestorLotacaoResponse>(new { idLotacao = idLotacao }, @"/pessoa/consultarGestorDaLotacaoPeloIdLotacao/");
+            return Mapper.Map<GestorLotacaoResponse, GestorLotacaoDto>(r);
+        }
+
+        public async Task<GestorLotacaoDto> ConsultarGestorDaLotacaoPeloIdLotacaoAsync(string idLotacao, CancellationToken cancellationToken)
+        {
+
+            var r = await _sigespDadosPessoaRequestService.PostAsync<dynamic, GestorLotacaoResponse>(new { idLotacao = idLotacao }, @"/pessoa/consultarGestorDaLotacaoPeloIdLotacao/", cancellationToken);
+            return Mapper.Map<GestorLotacaoResponse, GestorLotacaoDto>(r);
         }
     }
 }
