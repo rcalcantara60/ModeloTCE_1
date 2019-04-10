@@ -58,11 +58,20 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
-    <Reference Include="TCE.CrossCutting.Dto">
-      <HintPath>..\..\..\TCE.Base\CrossCutting\TCE.CrossCutting\bin\Debug\TCE.CrossCutting.Dto.dll</HintPath>
+    <Reference Include="TCE.Aop, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\TCE.Aop.2.2.0\lib\net47\TCE.Aop.dll</HintPath>
     </Reference>
-    <Reference Include="TCE.Repository">
-      <HintPath>..\..\..\Repository\bin\Debug\TCE.Repository.dll</HintPath>
+    <Reference Include="TCE.AppLayerBase, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\TCE.AppLayerBase.2.2.0\lib\net47\TCE.AppLayerBase.dll</HintPath>
+    </Reference>
+    <Reference Include="TCE.CrossCutting.Dto, Version=1.0.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\TCE.CrossCutting.Dto.2.1.0\lib\net462\TCE.CrossCutting.Dto.dll</HintPath>
+    </Reference>
+    <Reference Include="TCE.DomainLayerBase, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\TCE.DomainLayerBase.2.2.0\lib\net47\TCE.DomainLayerBase.dll</HintPath>
+    </Reference>
+    <Reference Include="TCE.Repository, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\TCE.Repository.2.2.0\lib\TCE.Repository.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -71,24 +80,14 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\WorkSpaceGit\TCE.RestClient\TCE.RestClient\TCE.RestClient.csproj">
       <Project>{c14bf8eb-2255-42bf-97f0-034551f3d348}</Project>
       <Name>TCE.RestClient</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\TCE.Base\AOP\TCE.Aop\TCE.Aop.csproj">
-      <Project>{15bb49ea-3aa3-44a9-8d10-3015526f2b0c}</Project>
-      <Name>TCE.Aop</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\TCE.Base\APP\TCE.AppLayerBase\TCE.AppLayerBase.csproj">
-      <Project>{32c820e4-6149-4356-927d-081c803c7ce7}</Project>
-      <Name>TCE.AppLayerBase</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\TCE.Base\Domain\TCE.DomainLayerBase\TCE.DomainLayerBase.csproj">
-      <Project>{0b426bf9-cd88-4b1c-a231-bb37d161200a}</Project>
-      <Name>TCE.DomainLayerBase</Name>
     </ProjectReference>
     <ProjectReference Include="..\AcL\AcL.csproj">
       <Project>{1CA5A7D2-A9D2-4DD0-B2F0-31FB4BCCAB98}</Project>

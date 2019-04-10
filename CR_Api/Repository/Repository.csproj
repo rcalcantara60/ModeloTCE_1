@@ -145,6 +145,12 @@
       <HintPath>..\packages\System.Xml.ReaderWriter.4.3.1\lib\net46\System.Xml.ReaderWriter.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="TCE.CrossCutting.Dto, Version=1.0.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\TCE.CrossCutting.Dto.2.1.0\lib\net462\TCE.CrossCutting.Dto.dll</HintPath>
+    </Reference>
+    <Reference Include="TCE.Repository, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\TCE.Repository.2.2.0\lib\TCE.Repository.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MicroORM\CountryMicroORMRepository.cs" />
@@ -159,14 +165,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\TCE.Base\CrossCutting\TCE.CrossCutting\TCE.CrossCutting.Dto.csproj">
-      <Project>{0cc4df1b-f991-499e-bfee-1fa399fc47e4}</Project>
-      <Name>TCE.CrossCutting.Dto</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\TCE.Base\Repository\TCE.Repository\TCE.Repository.csproj">
-      <Project>{4ee254c8-42f3-4b3c-937b-da5835a185ad}</Project>
-      <Name>TCE.Repository</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Context\Context.csproj">
       <Project>{14dedaa2-3d4b-45bc-ab54-61f768e82f89}</Project>
       <Name>Context</Name>

@@ -1,0 +1,50 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EntityFramework" Version="6.2.0" />
+    <PackageReference Include="FluentValidation" Version="8.2.0" />
+    <PackageReference Include="nunit" Version="3.11.0" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.13.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.0.1" />
+    <PackageReference Include="SimpleInjector.Extensions.ExecutionContextScoping" Version="4.0.0" />
+    <PackageReference Include="SpecFlow.NUnit.Runners" Version="3.0.191" />
+    <PackageReference Include="SpecFlow.SimpleInjector" Version="1.1.0" />
+    <PackageReference Include="SpecFlow.Tools.MsBuild.Generation" Version="3.0.191" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\PACOTES_TCE.Base\AOP\TCE.Aop\TCE.Aop.csproj" />
+    <ProjectReference Include="..\..\PACOTES_TCE.Base\APP\TCE.AppLayerBase\TCE.AppLayerBase.csproj" />
+    <ProjectReference Include="..\..\PACOTES_TCE.Base\CrossCutting\TCE.CrossCutting\TCE.CrossCutting.Dto.csproj" />
+    <ProjectReference Include="..\..\PACOTES_TCE.Base\Domain\TCE.DomainLayerBase\TCE.DomainLayerBase.csproj" />
+    <ProjectReference Include="..\..\PACOTES_TCE.Base\Repository\TCE.Repository\TCE.Repository.csproj" />
+    <ProjectReference Include="..\..\PACOTES_TCE.Base\RestClient\TCE.RestClient.csproj" />
+    <ProjectReference Include="..\Application\Application.csproj" />
+    <ProjectReference Include="..\Context\Context.csproj" />
+    <ProjectReference Include="..\Domain\Domain.csproj" />
+    <ProjectReference Include="..\Repository\Repository.csproj" />
+    <ProjectReference Include="..\Resources\Resources.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Features\Country.feature.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Country.feature</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <SpecFlowFeatureFiles Update="Features\Country.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Country.feature.cs</LastGenOutput>
+    </SpecFlowFeatureFiles>
+  </ItemGroup>
+
+</Project>

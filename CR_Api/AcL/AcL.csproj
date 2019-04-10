@@ -49,6 +49,9 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="TCE.RestClient, Version=1.0.1.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\TCE.RestClient.2.2.0\lib\netstandard2.0\TCE.RestClient.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Mappings\ApiToDtoMapping\SigespApiToDtoProfile.cs" />
@@ -74,10 +77,6 @@
     <Folder Include="Mappings\DtoToApiMapping\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\WorkSpaceGit\TCE.RestClient\TCE.RestClient\TCE.RestClient.csproj">
-      <Project>{c14bf8eb-2255-42bf-97f0-034551f3d348}</Project>
-      <Name>TCE.RestClient</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Domain\Domain.csproj">
       <Project>{26B7D569-BC43-4ECF-83C8-8DA03B70CA4C}</Project>
       <Name>Domain</Name>
